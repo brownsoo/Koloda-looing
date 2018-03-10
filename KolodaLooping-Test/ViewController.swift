@@ -11,14 +11,14 @@ import Koloda
 
 class ViewController: UIViewController {
 
-    private var kolodaView: KolodaView!
+    private var kolodaView: MyKolodaView!
     private let items = ["1", "2", "3", "4", "5"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = UIColor(white: 0.8, alpha: 1)
-        kolodaView = KolodaView()
+        kolodaView = MyKolodaView()
         view.addSubview(kolodaView)
         kolodaView.translatesAutoresizingMaskIntoConstraints = false
         kolodaView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
@@ -61,17 +61,35 @@ extension ViewController: KolodaViewDataSource {
     }
 
     func koloda(_ koloda: KolodaView, allowedDirectionsForIndex index: Int) -> [SwipeResultDirection] {
-        return [.down]
+        return [.down, .bottomLeft, .bottomRight]
     }
 
     func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
+        print("viewForCardAt \(index)")
         let card = CardView()
         card.title.text = "\(items[index]) card"
         return card
     }
 
     func koloda(_ koloda: KolodaView, didShowCardAt index: Int) {
-        print("didShowCardAt \(index)")
+        // print("didShowCardAt \(index)")
+    }
+}
+
+class MyKolodaView : KolodaView {
+    override func frameForCard(at index: Int) -> CGRect {
+        let scalePercent = CGFloat(0.9)
+        let width = CardView.defaultSize.width * pow(scalePercent, CGFloat(index))
+        let xOffset = (self.frame.width - width) / 2
+        let height = CardView.defaultSize.height * pow(scalePercent, CGFloat(index))
+        var yOffset: CGFloat
+        let frontCardOffsetY = CGFloat(10)
+        if index == 0 {
+            yOffset = frontCardOffsetY
+        } else {
+            yOffset = frontCardOffsetY - (8 * CGFloat(index))
+        }
+        return CGRect(x: xOffset, y: yOffset, width: width, height: height)
     }
 }
 
@@ -103,6 +121,8 @@ private class CardView: UIView {
                 UIColor(red: CGFloat(79 / 255.0), green: CGFloat(132 / 255.0), blue: CGFloat(213 / 255.0), alpha: CGFloat(1)).cgColor
         self.layer.drawsAsynchronously = true
         self.layer.cornerRadius = 8
+        self.layer.borderColor = UIColor.gray.cgColor
+        self.layer.borderWidth = 1
         self.backgroundColor = UIColor.white
 
         title = UILabel()
