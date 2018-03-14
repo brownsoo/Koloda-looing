@@ -237,6 +237,11 @@
 			isa = PBXProject;
 			attributes = {
 				ORGANIZATIONNAME = hansoo.labs;
+				TargetAttributes = {
+					16E4269AF00EEE352E3ADE48 = {
+						DevelopmentTeam = TB576F3KJ6;
+					};
+				};
 			};
 			buildConfigurationList = 16E42B4E0C796649C9C19D6D /* Build configuration list for PBXProject "KolodaLooping-Test" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -502,6 +507,7 @@
 			baseConfigurationReference = 6330248AD7C6E55F32285026 /* Pods-KolodaLooping-Test.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = TB576F3KJ6;
 				INFOPLIST_FILE = "KolodaLooping-Test/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hansoolabs.KolodaLooping-Test";
@@ -610,6 +616,7 @@
 			baseConfigurationReference = EBD8AA27E94846CC7621D471 /* Pods-KolodaLooping-Test.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = TB576F3KJ6;
 				INFOPLIST_FILE = "KolodaLooping-Test/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hansoolabs.KolodaLooping-Test";
@@ -700,6 +707,7 @@
 				16E42C650DA021D7F39AD3F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		16E425F2FF3A6EB473177647 /* Build configuration list for PBXNativeTarget "KolodaLooping-TestUITests" */ = {
 			isa = XCConfigurationList;
@@ -708,6 +716,7 @@
 				16E42CF65B680EAC61E0E072 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		16E429C35397C1297371D822 /* Build configuration list for PBXNativeTarget "KolodaLooping-Test" */ = {
 			isa = XCConfigurationList;
@@ -716,6 +725,7 @@
 				16E421CC96EF77EF8B4C47FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		16E42B4E0C796649C9C19D6D /* Build configuration list for PBXProject "KolodaLooping-Test" */ = {
 			isa = XCConfigurationList;
