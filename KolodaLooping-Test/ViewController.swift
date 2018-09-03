@@ -35,6 +35,15 @@ class ViewController: UIViewController {
         kolodaView.layer.borderColor = UIColor.blue.cgColor
         kolodaView.layer.borderWidth = 1
         
+        let kolodaGuide = UILabel()
+        view.addSubview(kolodaGuide)
+        kolodaGuide.translatesAutoresizingMaskIntoConstraints = false
+        kolodaGuide.leadingAnchor.constraint(equalTo: kolodaView.leadingAnchor).isActive = true
+        kolodaGuide.bottomAnchor.constraint(equalTo: kolodaView.topAnchor, constant: -4).isActive = true
+        kolodaGuide.font = UIFont.systemFont(ofSize: 11, weight: .light)
+        kolodaGuide.text = "KolodaView area"
+        kolodaGuide.textColor = UIColor.blue
+        
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(label)
@@ -44,7 +53,6 @@ class ViewController: UIViewController {
         label.font = UIFont.systemFont(ofSize: 11, weight: .light)
         label.text = """
         This is example for looping feature of Koloda
-        Swipe Up: delete card (feature-looping+deletion branch)
         Swipe Down: show next card
         """
         
@@ -91,39 +99,6 @@ extension ViewController: KolodaViewDelegate {
     func koloda(_ koloda: KolodaView, shouldDragCardAt index: Int) -> Bool {
         return true
     }
-    func koloda(_ koloda: KolodaView, willSwipeCardAt index: Int, in direction: SwipeResultDirection) {
-        print("willSwipeAt \(index)")
-        if direction == .up && items.count > 0 {
-            items.remove(at: index)
-        }
-        updateDataView(index)
-    }
-    func koloda(_ koloda: KolodaView, didSwipeCardAt index: Int, in direction: SwipeResultDirection) {
-        print("didSwipeCardAt \(index)")
-        // Remove card only swiped on upward
-        
-        if direction == .up && items.count > 0 {
-            print("remove at index: \(index)")
-            koloda.removeCardInIndexRange(index..<index+1, animated: false)
-            
-            let last = min(index + koloda.countOfVisibleCards, self.items.count)
-            print("reload \(index) ..< \(last)")
-            let range = index..<last
-            koloda.reloadCardsInIndexRange(range)
-            
-            // FIXME: update background cards
-            let realVisibleCount = min(koloda.countOfVisibleCards, self.items.count)
-            if range.count < realVisibleCount {
-                DispatchQueue.main.async {
-                    let to = realVisibleCount - range.count
-                    print("reload 0 ..< \(to)")
-                    koloda.reloadCardsInIndexRange(0..<to)
-                }
-            }
-        }
-    }
-    
-    
 }
 
 extension ViewController: KolodaViewDataSource {
@@ -136,7 +111,7 @@ extension ViewController: KolodaViewDataSource {
     }
 
     func koloda(_ koloda: KolodaView, allowedDirectionsForIndex index: Int) -> [SwipeResultDirection] {
-        return [.down, .bottomLeft, .bottomRight, .up]
+        return [.down, .bottomLeft, .bottomRight]
     }
 
     func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
