@@ -4,16 +4,26 @@ PODS:
   - pop (1.0.10)
 
 DEPENDENCIES:
-  - Koloda (from `~/Workspace/Koloda/`)
+  - "Koloda (from `https://github.com/brownsoo/Koloda.git`, branch `feature-looping+deletion`)"
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - pop
 
 EXTERNAL SOURCES:
   Koloda:
-    :path: ~/Workspace/Koloda/
+    :branch: "feature-looping+deletion"
+    :git: https://github.com/brownsoo/Koloda.git
+
+CHECKOUT OPTIONS:
+  Koloda:
+    :commit: bbe5d78435c36dd510d091f8cfa4588f1b8cc792
+    :git: https://github.com/brownsoo/Koloda.git
 
 SPEC CHECKSUMS:
   Koloda: 5eb4a2348004b35999fafd8dc2c0c8f0e0f6be20
   pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
 
-PODFILE CHECKSUM: 4baa5c87896e4354a97b19b2dc6ff8ae54f3a02c
+PODFILE CHECKSUM: 4caf4e90da4d18f8af19b01268199c41ed07e4a4
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.5.3

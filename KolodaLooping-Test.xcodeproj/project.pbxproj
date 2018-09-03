@@ -176,8 +176,6 @@
 				16E4268BC5642E228C5C2CA2 /* Sources */,
 				16E42C50A64C2D593A5047F0 /* Frameworks */,
 				16E42812F2F2EBD525002C68 /* Resources */,
-				63AFB68A00167F93C1B100B0 /* [CP] Embed Pods Frameworks */,
-				45B1A13E3B5E6E7B9C7593B2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -198,7 +196,6 @@
 				16E42E8CC7CF7196DFCBDA66 /* Frameworks */,
 				16E42510FFB60A5C16CD8790 /* Resources */,
 				5B733DC9F61E923C1B7DC3D1 /* [CP] Embed Pods Frameworks */,
-				72B56625F12C286FA6B0773F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -217,8 +214,6 @@
 				16E429F6CD7FBFAADD0E7376 /* Sources */,
 				16E42C37E306D0A1D6373CCD /* Frameworks */,
 				16E427A007572D86F13EFE15 /* Resources */,
-				3C798A9E6FA8B2FCCFC4B15F /* [CP] Embed Pods Frameworks */,
-				83EBFA91B36CF3DB8F212F0D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -326,36 +321,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		3C798A9E6FA8B2FCCFC4B15F /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KolodaLooping-TestTests/Pods-KolodaLooping-TestTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		45B1A13E3B5E6E7B9C7593B2 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KolodaLooping-TestUITests/Pods-KolodaLooping-TestUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		5B733DC9F61E923C1B7DC3D1 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -374,51 +339,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KolodaLooping-Test/Pods-KolodaLooping-Test-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		63AFB68A00167F93C1B100B0 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KolodaLooping-TestUITests/Pods-KolodaLooping-TestUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		72B56625F12C286FA6B0773F /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KolodaLooping-Test/Pods-KolodaLooping-Test-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		83EBFA91B36CF3DB8F212F0D /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KolodaLooping-TestTests/Pods-KolodaLooping-TestTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FEB574843ABA652801363C1C /* [CP] Check Pods Manifest.lock */ = {

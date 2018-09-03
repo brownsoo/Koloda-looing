@@ -5,8 +5,10 @@ target 'KolodaLooping-Test' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for KolodaLooping-Test
-  pod 'Koloda', '~> 4.4'
+  # Pods for testing deletion
+  pod "Koloda", :git => 'https://github.com/brownsoo/Koloda.git', :branch => 'feature-looping+deletion'
+  # Pods for testing looping
+  # pod 'Koloda', '~> 4.4'
 
   target 'KolodaLooping-TestTests' do
     inherit! :search_paths
