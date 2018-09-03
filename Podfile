@@ -6,8 +6,7 @@ target 'KolodaLooping-Test' do
   use_frameworks!
 
   # Pods for KolodaLooping-Test
-  pod "Koloda", :git => 'https://github.com/brownsoo/Koloda.git', :branch => 'feature-looping+deletion'
-  #pod "Koloda", :path => '~/Workspace/Koloda/'
+  pod 'Koloda', '~> 4.4'
 
   target 'KolodaLooping-TestTests' do
     inherit! :search_paths
